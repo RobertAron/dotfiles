@@ -21,6 +21,7 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+source <(fzf --zsh)
 
 
 # Amazon Q post block. Keep at the bottom of this file.

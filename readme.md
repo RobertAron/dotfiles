@@ -10,11 +10,13 @@
 - in `iterm -> settings -> profiles -> colors -> color presets...` select Abernathy
 - double click `UbuntuMono-Regular.ttf`
 - `iterm -> settings -> profiles -> text -> font` choose Ubunutu Mono + Regluar + 17, line height 110
-
+- `iterm -> profiles -> keys -> key mappings -> presets -> natural text editing`
 ```shell
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.zprofile ~/.zprofile
 
 brew install --cask iterm2
 brew install neofetch
+brew install --cask amazon-q
+brew install fzf
 ```
