@@ -6,10 +6,9 @@
 
 ## Installs
 
-- double click `Abernathy.itermcolors`
-- in `iterm -> settings -> profiles -> colors -> color presets...` select Abernathy
-- double click `UbuntuMono-Regular.ttf`
-- `iterm -> settings -> profiles -> text -> font` choose Ubunutu Mono + Regluar + 17, line height 110
+- double click `Snazzy.itermcolors`
+- in `iterm -> settings -> profiles -> colors -> color presets...` select Snazzy
+- `iterm -> settings -> profiles -> text -> font` choose font-fira-code-nerd-font + Regluar + 17, line height 110
 - `iterm -> profiles -> keys -> key mappings -> presets -> natural text editing`
 ```shell
 ln -s ~/dotfiles/.zshrc ~/.zshrc
@@ -20,4 +19,5 @@ brew install neofetch
 brew install --cask amazon-q
 brew install fzf
 brew install starship
+brew install --cask font-fira-code-nerd-font
 ```
