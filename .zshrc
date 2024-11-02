@@ -1,3 +1,5 @@
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 echo "ZSH Starting"
 source ~/.zprofile
 
@@ -21,5 +23,5 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 
-# /Users/robertaron/bin:/Users/robertaron/.local/bin:/usr/local/bin:/usr/local/sbin:/Users/robertaron/.bun/bin:/usr/bin:/bin:/Users/robertaron/.local/bin:/Users/robertaron/Desktop/dev/c++/vcpkg:/Users/robertaron/.local/share/fig/plugins/fzf-zsh-plugin_unixorn/bin:/usr/local/opt/fzf/bin
-# /Users/robertaron/bin:/Users/robertaron/.local/bin:/Users/robertaron/bin:/Users/robertaron/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/iTerm.app/Contents/Resources/utilities
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
