@@ -1,2 +1,4 @@
+echo "ZProfile"
 # Basic profile setup
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+
