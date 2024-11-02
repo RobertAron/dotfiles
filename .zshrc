@@ -1,7 +1,6 @@
 # Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 echo "ZSH Starting"
-source ~/.zprofile
 
 # Basic .zshrc setup
 HISTFILE=~/.zsh_history
@@ -15,7 +14,7 @@ export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export ZSH="$HOME/.local/share/fig/plugins/ohmyzsh"
 
 # ZSH theme
-ZSH_THEME="robbyrussell"
+eval "$(starship init zsh)"
 
 # Load plugins
 plugins=(git)

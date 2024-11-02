@@ -19,4 +19,5 @@ brew install --cask iterm2
 brew install neofetch
 brew install --cask amazon-q
 brew install fzf
+brew install starship
 ```
