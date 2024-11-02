@@ -20,4 +20,7 @@ brew install --cask amazon-q
 brew install fzf
 brew install starship
 brew install --cask font-fira-code-nerd-font
+# nvm
+brew install nvm
+mkdir -p ~/.nvm
 ```
