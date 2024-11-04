@@ -1,7 +1,11 @@
 # Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 echo "ZSH Starting"
-
+if [ -f /opt/homebrew/bin/brew ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+  echo "Warning: Homebrew is not installed at /opt/homebrew/bin/brew"
+fi
 # Basic .zshrc setup
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
@@ -14,6 +18,7 @@ export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export ZSH="$HOME/.local/share/fig/plugins/ohmyzsh"
 
 # ZSH theme
+export STARSHIP_CONFIG=~/dotfiles/starship.toml
 eval "$(starship init zsh)"
 
 # Load plugins
@@ -24,10 +29,12 @@ source <(fzf --zsh)
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
+# intel
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
-
-
+# apple silicon
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"                                       # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
