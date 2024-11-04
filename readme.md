@@ -8,11 +8,14 @@
 
 - double click `Snazzy.itermcolors`
 - in `iterm -> settings -> profiles -> colors -> color presets...` select Snazzy
-- `iterm -> settings -> profiles -> text -> font` choose font-fira-code-nerd-font + Regluar + 17, line height 110
+- `iterm -> settings -> profiles -> text -> font` choose FireCode Nerd Font Mono line height 110
 - `iterm -> profiles -> keys -> key mappings -> presets -> natural text editing`
 ```shell
-ln -s ~/dotfiles/.zshrc ~/.zshrc
+rm -f .zprofile .zshrc .bashrc  .profile
 ln -s ~/dotfiles/.zprofile ~/.zprofile
+ln -s ~/dotfiles/.zshrc ~/.zshrc
+ln -s ~/dotfiles/.bashrc ~/.bashrc
+ln -s ~/dotfiles/.profile ~/.profile
 
 brew install --cask iterm2
 brew install neofetch
