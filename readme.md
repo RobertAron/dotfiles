@@ -8,7 +8,7 @@
 
 - double click `Snazzy.itermcolors`
 - in `iterm -> settings -> profiles -> colors -> color presets...` select Snazzy
-- `iterm -> settings -> profiles -> text -> font` choose FireCode Nerd Font Mono line height 110
+- `iterm -> settings -> profiles -> text -> font` choose FireCode Nerd Font Mono
 - `iterm -> profiles -> keys -> key mappings -> presets -> natural text editing`
 
 ```shell
