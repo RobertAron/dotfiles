@@ -10,6 +10,7 @@
 - in `iterm -> settings -> profiles -> colors -> color presets...` select Snazzy
 - `iterm -> settings -> profiles -> text -> font` choose FireCode Nerd Font Mono line height 110
 - `iterm -> profiles -> keys -> key mappings -> presets -> natural text editing`
+
 ```shell
 rm -f .zprofile .zshrc .bashrc  .profile
 ln -s ~/dotfiles/.zprofile ~/.zprofile
@@ -26,4 +27,12 @@ brew install --cask font-fira-code-nerd-font
 # nvm
 brew install nvm
 mkdir -p ~/.nvm
+```
+
+vsc config
+
+```json
+{
+  "terminal.integrated.minimumContrastRatio": 1
+}
 ```
