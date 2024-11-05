@@ -1,18 +1,13 @@
 format = """
-($cmd_duration\
-\n)\
+($cmd_duration\n)\
 [](#9A348E)\
-[](bg:#DA627D fg:#9A348E)\
-$directory\
-[](fg:#DA627D bg:#FCA17D)\
-$git_branch\
-$git_status\
-[](fg:#FCA17D)
-\n
+$status[](fg:#9A348E bg:#DA627D)\
+$directory[](fg:#DA627D bg:#FCA17D)\
+$git_branch$git_status[](fg:#FCA17D)
 """
 
 # Disable the blank line at the start of the prompt
-add_newline = false
+add_newline = true
 
 # You can also replace your username with a neat symbol like   or disable this
 # and use the os module below
@@ -20,7 +15,7 @@ add_newline = false
 show_always = true
 style_user = "bg:#9A348E"
 style_root = "bg:#9A348E"
-format = '[$user ]($style)'
+format = '[$user]($style)'
 disabled = false
 
 # An alternative to the username module which displays a symbol that
@@ -132,3 +127,15 @@ format = '[ ♥ $time ]($style)'
 min_time = 1000
 style = "bg:#9A348E"
 format = 'took [$duration](bold yellow)'
+
+[status]
+disabled = false
+success_symbol = "✔"
+sigint_symbol = "✘"
+not_executable_symbol = "✘"
+not_found_symbol = "✘"
+signal_symbol = "✘"
+map_symbol = true
+style = 'bg:#9A348E'
+format = '[$symbol]($style)'
+symbol = "✘"
