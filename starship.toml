@@ -7,7 +7,7 @@ $git_branch$git_status[](fg:#33658A)
 """
 
 # Disable the blank line at the start of the prompt
-add_newline = true
+add_newline = false
 
 
 
