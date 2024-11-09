@@ -1,7 +1,8 @@
 format = """
 ($cmd_duration\n)\
 [](#9A348E)\
-$status[](fg:#9A348E bg:#DA627D)\
+[$status ](bg:#9A348E)\
+[](fg:#9A348E bg:#DA627D)\
 $directory[](fg:#DA627D bg:#33658A)\
 $git_branch$git_status[](fg:#33658A)
 """

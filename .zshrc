@@ -3,8 +3,10 @@
 echo "ZSH Starting"
 if [ -f /opt/homebrew/bin/brew ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 else
-  echo "Warning: Homebrew is not installed at /opt/homebrew/bin/brew"
+  echo "Warning: Homebrew is not installed at /opt/homebrew/bin/brew or /home/linuxbrew/.linuxbrew/bin/brew"
 fi
 # Basic .zshrc setup
 HISTFILE=~/.zsh_history
@@ -14,7 +16,6 @@ SAVEHIST=1000
 # Make Programs generally available
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
-# ZSH path setup.
 export ZSH="$HOME/.local/share/fig/plugins/ohmyzsh"
 
 # ZSH theme
