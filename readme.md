@@ -1,5 +1,7 @@
 # Personal config for terminal stuff.
 
+![Screenshot of results](screenshot.png)
+
 ## Top Notes
 
 - `.bashrc` and `.profile` are both used for bash shells, which is not as feature rich as zsh. Basically, don't use them.
@@ -31,7 +33,9 @@ mkdir -p ~/.nvm
 ```
 
 ### VS code color fix
+
 `>preferences: Open User Settings (JSON)`
+
 ```json
 {
   "terminal.integrated.minimumContrastRatio": 1
@@ -39,7 +43,9 @@ mkdir -p ~/.nvm
 ```
 
 ### Git Config
+
 `~/.gitconfig`
+
 ```ini
 [user]
 	name = Robert Aron
