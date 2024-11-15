@@ -30,10 +30,22 @@ brew install nvm
 mkdir -p ~/.nvm
 ```
 
-vsc config
-
+### VS code color fix
+`>preferences: Open User Settings (JSON)`
 ```json
 {
   "terminal.integrated.minimumContrastRatio": 1
 }
+```
+
+### Git Config
+`~/.gitconfig`
+```ini
+[user]
+	name = Robert Aron
+	email = robert.aron.tx@gmail.com
+[pull]
+	rebase = false
+[push]
+	autoSetupRemote = true
 ```
