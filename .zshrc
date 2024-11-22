@@ -1,5 +1,9 @@
+# zmodload zsh/zprof
 # Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
+# Disable omz update
+DISABLE_AUTO_UPDATE=true
+
 echo "ZSH Starting"
 if [ -f /opt/homebrew/bin/brew ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -21,16 +25,10 @@ BREW_PATH=$(brew --prefix)
 # Make Programs generally available
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
-export ZSH="$HOME/.local/share/fig/plugins/ohmyzsh"
-
 # ZSH theme
 export STARSHIP_CONFIG=~/dotfiles/starship.toml
 eval "$(starship init zsh)"
-
-# Load plugins
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
+# ctrl+r fuzzy searching
 source <(fzf --zsh)
 
 # NVM
@@ -47,3 +45,4 @@ export NVM_DIR="$HOME/.nvm"
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+# zprof > temp.txt
