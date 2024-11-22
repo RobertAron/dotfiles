@@ -31,17 +31,24 @@ eval "$(starship init zsh)"
 # ctrl+r fuzzy searching
 source <(fzf --zsh)
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-# intel
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
-# apple silicon
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"                                       # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
-# WSL
-[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"                                       # This loads nvm
-[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+# FNM Compatibility Setup
+# Determine the operating system
+OS_TYPE="$(uname -s)"
+# Set FNM_DIR based on the operating system
+if [[ "$OS_TYPE" == "Darwin" ]]; then
+  # macOS (both Intel and Apple Silicon)
+  export FNM_DIR="$HOME/Library/Application Support/fnm"
+elif [[ "$OS_TYPE" == "Linux" ]]; then
+  # Linux (including WSL)
+  export FNM_DIR="$HOME/.fnm"
+else
+  echo "Unsupported platform for FNM"
+fi
+if [[ -d "$FNM_DIR" ]]; then
+  export PATH="$FNM_DIR:$PATH"
+  eval "$(fnm env --use-on-cd --shell zsh)"
+fi
+
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
