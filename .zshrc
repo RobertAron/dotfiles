@@ -13,8 +13,8 @@ else
 fi
 # Basic .zshrc setup
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=50000
+SAVEHIST=50000
 
 # Google Cloud SDK
 BREW_PATH=$(brew --prefix)
