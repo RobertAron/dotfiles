@@ -4,7 +4,6 @@
 # Disable omz update
 DISABLE_AUTO_UPDATE=true
 
-echo "ZSH Starting"
 if [ -f /opt/homebrew/bin/brew ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 elif [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
