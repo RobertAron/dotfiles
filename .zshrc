@@ -48,7 +48,21 @@ if [[ -d "$FNM_DIR" ]]; then
   eval "$(fnm env --use-on-cd --shell zsh)"
 fi
 
+[[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
+
+# bun setup
+if [[ -d "$HOME/.bun" ]]; then
+  export BUN_INSTALL="$HOME/.bun"
+  export PATH="$BUN_INSTALL/bin:$PATH"
+  # bun completions
+  [ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
+fi
+
+
+# Roblox installer
+if [[ -f "$HOME/.aftman/env" ]]; then
+  . "$HOME/.aftman/env"
+fi
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
-# zprof > temp.txt
