@@ -1,16 +1,18 @@
-# zmodload zsh/zprof
-# Amazon Q pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
-# Disable omz update
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
+# zmodload zsh/zprof# Disable omz update
 DISABLE_AUTO_UPDATE=true
 
+# Homebrew setup...
 if [ -f /opt/homebrew/bin/brew ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 elif [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 else
-  echo "Warning: Homebrew is not installed at /opt/homebrew/bin/brew or /home/linuxbrew/.linuxbrew/bin/brew"
+  echo "Warning: Homebrew is not installed..."
 fi
+
+
 # Basic .zshrc setup
 HISTFILE=~/.zsh_history
 HISTSIZE=50000
@@ -64,5 +66,10 @@ if [[ -f "$HOME/.aftman/env" ]]; then
   . "$HOME/.aftman/env"
 fi
 
-# Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+CP3M="$HOME/Desktop/dev/cpp-bunler/cbuild/dist"
+if [[ -d "$CP3M" ]]; then
+  export PATH="$CP3M:$PATH"
+fi
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
