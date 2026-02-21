@@ -49,7 +49,6 @@ if [[ -d "$FNM_DIR" ]]; then
   export PATH="$FNM_DIR:$PATH"
   eval "$(fnm env --use-on-cd --shell zsh)"
 fi
-
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 
 # bun setup
@@ -69,6 +68,20 @@ fi
 CP3M="$HOME/Desktop/dev/cpp-bunler/cbuild/dist"
 if [[ -d "$CP3M" ]]; then
   export PATH="$CP3M:$PATH"
+fi
+
+# Vulkan SDK
+if [[ -d "$HOME/VulkanSDK/1.3.290.0" ]]; then
+  export VULKAN_SDK="$HOME/VulkanSDK/1.3.290.0"
+  export PATH="$VULKAN_SDK/bin:$PATH"
+  export DYLD_LIBRARY_PATH="$VULKAN_SDK/lib:$DYLD_LIBRARY_PATH"
+  export VK_ICD_FILENAMES="$VULKAN_SDK/etc/vulkan/icd.d/MoltenVK_icd.json"
+  export VK_LAYER_PATH="$VULKAN_SDK/etc/vulkan/layer.d"
+fi
+
+# Use this cmake path, as brew can be quite behind
+if [[ -d "/Applications/CMake.app" ]]; then
+  export PATH="/Applications/CMake.app/Contents/bin:$PATH"
 fi
 
 # Kiro CLI post block. Keep at the bottom of this file.
