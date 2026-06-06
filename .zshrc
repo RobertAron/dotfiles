@@ -64,7 +64,7 @@ if [[ -f "$HOME/.aftman/env" ]]; then
   . "$HOME/.aftman/env"
 fi
 
-CP3M="$HOME/Desktop/dev/cpp-bunler/cp3m/dist"
+CP3M="$HOME/Desktop/dev/cpp-bunler/apps/cp3m-cli/dist/"
 if [[ -d "$CP3M" ]]; then
   export PATH="$CP3M:$PATH"
 fi
@@ -81,6 +81,13 @@ fi
 # Use this cmake path, as brew can be quite behind
 if [[ -d "/Applications/CMake.app" ]]; then
   export PATH="/Applications/CMake.app/Contents/bin:$PATH"
+fi
+
+# ccache setup
+if command -v ccache &>/dev/null; then
+  export CCACHE_DIR="$HOME/.ccache"
+  export CMAKE_C_COMPILER_LAUNCHER=ccache
+  export CMAKE_CXX_COMPILER_LAUNCHER=ccache
 fi
 
 # Kiro CLI post block. Keep at the bottom of this file.

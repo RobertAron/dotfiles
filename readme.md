@@ -57,3 +57,9 @@ fnm install --lts
 [push]
 	autoSetupRemote = true
 ```
+
+### Ghosttty
+```term
+mkdir -p ~/.config/ghostty
+ln -s /Users/robertaron/dotfiles/config.ghostty ~/.config/ghostty/config
+```
