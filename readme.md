@@ -26,6 +26,8 @@ brew install neofetch fzf starship fnm
 # Install Homebrew cask applications
 brew install --cask iterm2 amazon-q font-fira-code-nerd-font rectangle
 
+# setup linking ghostty to kiro
+kiro-cli integrations install input-method
 # Install the latest LTS version of Node.js using fnm
 fnm install --lts
 ```
