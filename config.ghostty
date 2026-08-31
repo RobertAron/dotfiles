@@ -1,3 +1,4 @@
 font-size = 24
 theme = Snazzy
 macos-titlebar-style = native
+confirm-close-surface = false
