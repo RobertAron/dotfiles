@@ -64,7 +64,8 @@ if [[ -f "$HOME/.aftman/env" ]]; then
   . "$HOME/.aftman/env"
 fi
 
-CP3M="$HOME/Desktop/dev/cpp-bunler/apps/cp3m-cli/dist/"
+export CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN=1
+CP3M="$HOME/Desktop/dev/cpp-bunler/cp3m/dist"
 if [[ -d "$CP3M" ]]; then
   export PATH="$CP3M:$PATH"
 fi
