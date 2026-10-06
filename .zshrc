@@ -91,5 +91,10 @@ if command -v ccache &>/dev/null; then
   export CMAKE_CXX_COMPILER_LAUNCHER=ccache
 fi
 
+# Swift toolchain manager
+if [[ -f "$HOME/.swiftly/env.sh" ]]; then
+  . "$HOME/.swiftly/env.sh"
+fi
+
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
