@@ -2,16 +2,14 @@
 
 ![Screenshot of results](screenshot.png)
 
-## Top Notes
-
-- `.bashrc` and `.profile` are both used for bash shells, which is not as feature rich as zsh. Basically, don't use them.
-
 ## Installs
 
 - double click `Snazzy.itermcolors`
 - in `iterm -> settings -> profiles -> colors -> color presets...` select Snazzy
-- `iterm -> settings -> profiles -> text -> font` choose FireCode Nerd Font Mono
+- `iterm -> settings -> profiles -> text -> font` choose FiraCode Nerd Font Mono
 - `iterm -> profiles -> keys -> key mappings -> presets -> natural text editing`
+
+Remove home dir configs, and replace them with symlinks to this repo
 
 ```shell
 rm -f .zprofile .zshrc .bashrc  .profile
@@ -21,10 +19,10 @@ ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.profile ~/.profile
 
 # Install Homebrew packages
-brew install neofetch fzf starship fnm
+brew install fastfetch fzf starship fnm
 
 # Install Homebrew cask applications
-brew install --cask iterm2 amazon-q font-fira-code-nerd-font rectangle
+brew install --cask iterm2 kiro-cli font-fira-code-nerd-font rectangle
 
 # setup linking ghostty to kiro
 kiro-cli integrations install input-method
@@ -32,7 +30,7 @@ kiro-cli integrations install input-method
 fnm install --lts
 ```
 
-- Open amazon-q app and configure
+- Open Kiro CLI app and configure
   - allow permissions
   - disable all features but CLI completions
 
@@ -60,8 +58,13 @@ fnm install --lts
 	autoSetupRemote = true
 ```
 
-### Ghosttty
-```term
+### Ghostty
+
+```shell
 mkdir -p ~/.config/ghostty
-ln -s /Users/robertaron/dotfiles/config.ghostty ~/.config/ghostty/config
+ln -sfn "$HOME/dotfiles/config.ghostty" "$HOME/.config/ghostty/config"
 ```
+
+## Extra
+
+`.bashrc` and `.profile` are both used for bash shells, which is not as feature rich as zsh. Basically, don't use them.
